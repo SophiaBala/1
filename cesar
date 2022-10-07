@@ -1,0 +1,23 @@
+a = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzабвгдеєжзиіїйклмнопрстуфхцчшщьюяабвгдеєжзиіїйклмнопрстуфхцчшщьюя12345678901234567890'
+
+mes = input('message:')
+key = 1
+mes = mes.lower()
+code = ''
+b = True
+while b == True:
+
+    for letter in mes:
+        place = a.find(letter)
+        new = place + key
+        if letter in a:
+            code = code + a[new]
+        else:
+            code = code + letter
+
+    print("Code is:", code)
+
+    mes = input('message:')
+    key = 1
+    mes = mes.lower()
+    code = ''
