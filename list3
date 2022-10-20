@@ -1,0 +1,49 @@
+from collections import Counter
+
+word_list = " Великий художник двадцятого століття Пабло Пікассо пройшов величезний творчий шлях."\
+        " Його першим наставником у мистецтві був батько, вчитель малювання й майстер декоративних розписів."\
+        " Пікассо почав малювати дуже рано, у чотирнадцять років. Бездоганно володіючи прийомами академічного малюнка,"\
+        " він блискуче склав іспити в Барселонську школу вишуканих мистецтв, але дуже скоро покинув її ."\
+        " У 1900 році Пабло Пікассо приїздить до Парижа. Тут склався його власний стиль."\
+        "У творчості майстра спостерігається злиття імпресіонізму у французькому дусі та мистецтва іспанських класиків. "\
+        "Картина Жінка в білому була написана Пабло Пікассо в середині 1910-х років, коли після довгого захоплення кубізмом художник знову звертається до фігуративного живопису."\
+
+start = True
+
+while start == True:
+
+    choose = int(input('Choose action 1, 2, 3: '))
+
+    if choose == 1:
+        def largestWord(s):
+            s = sorted(s, key=len)
+
+            print(s[-1])
+
+        if __name__ == "__main__":
+            l = list(word_list.split(" "))
+            largestWord(l)
+
+    elif choose == 2:
+        split_it = word_list.split()
+        Counter = Counter(split_it)
+        most_occur = Counter.most_common(5)
+        print(most_occur)
+
+    elif choose == 3:
+
+        def Convert(string):
+            li = list(string.split(" "))
+            return li
+
+
+        list_1 = (Convert(word_list))
+
+        def listToString(s):
+            str2 = " "
+            return (str2.join(s))
+
+        for word in word_list.split():
+            if len(word) > 2:
+                print(word + '\n')
+
