@@ -1,7 +1,10 @@
 import socket
 
+HOST = '192.168.2.103'
+PORT = 9096
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(("localhost", 9999))
+server.bind((HOST, PORT))
 
 server.listen()
 
@@ -11,10 +14,26 @@ done = False
 while not done:
 
     msg = client.recv(1024).decode('utf-8')
-    if msg == 'quit':
-        done = True
-    else:
-        print(msg)
+
+    a = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz' \
+        'абвгдеєжзиіїйклмнопрстуфхцчшщьюяабвгдеєжзиіїйклмнопрстуфхцчшщьюя' \
+        '12345678901234567890'
+
+    key = 1
+    msg = msg.lower()
+    code = ''
+
+    for letter in msg:
+        place = a.find(letter)
+        new = place + key
+        if letter in a:
+            code = code + a[new]
+        else:
+            code = code + letter
+
+    print(code)
     client.send(input('Message: ').encode('utf-8'))
 
-client.close()
+# client.close()
+
+
