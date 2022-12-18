@@ -1,0 +1,19 @@
+def mes(msg):
+
+    a = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz' \
+        'абвгдеєжзиіїйклмнопрстуфхцчшщьюяабвгдеєжзиіїйклмнопрстуфхцчшщьюя' \
+        '12345678901234567890'
+
+    code = ''
+    key = 1
+
+    for letter in msg:
+        place = a.find(letter)
+        new = place + key
+        if letter in a:
+            code = code + a[new]
+        else:
+            code = code + letter
+
+    #print("cesar: "+code)
+    return code
