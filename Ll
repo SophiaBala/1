@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x, result1, result2;
+
+    // Program 1: Calculate (5x+e)/(x^cosx)-6 for x=2
+    x = 2;
+    result1 = (5 * x + exp(1)) / pow(x, cos(x)) - 6;
+    printf("Program 1: The result is: %.2lf\n", result1);
+
+    // Program 2: Calculate 4x³-sin²x if x<=2
+    printf("Program 2: Enter a value for x: ");
+    scanf("%lf", &x);
+    if (x <= 2) {
+        result2 = 4 * pow(x, 3) - pow(sin(x), 2);
+        printf("Program 2: The result is: %.2lf\n", result2);
+    } else {
+        printf("Program 2: Error: x must be less than or equal to 2.\n");
+    }
+
+    return 0;
+}
