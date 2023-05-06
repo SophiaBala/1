@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x = 2, result;
+
+    result = (5 * x + exp(1)) / (pow(x, cos(x))) - 6;
+
+    printf("The result is: %.2lf\n", result);
+
+    return 0;
+}
+
